@@ -170,20 +170,9 @@ img {
   left: 0;
   width: 100%;
   background-color: #ffffff;
-  padding-left: 40px;
   z-index: 1;
-}
-@media screen and (max-width: 575px) {
-  .menu-list.is-open {
-    height: 100vh;
-  }
-}
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  .menu-list.is-open {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+  height: 100vh;
+  padding-left: 25px;
 }
 @media screen and (min-width: 768px) {
   .menu-list {
@@ -192,22 +181,15 @@ img {
   }
 }
 
-@media screen and (max-width: 575px) {
-  .menu {
-    margin-bottom: 302px;
-  }
-  .menu__item:not(:last-child) {
-    margin-bottom: 32px;
-  }
-}
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  .menu {
-    display: flex;
-  }
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: space-around;
 }
 @media screen and (min-width: 768px) {
   .menu {
-    display: flex;
+    flex-direction: row;
     margin-right: 84px;
   }
 }
@@ -228,7 +210,13 @@ img {
 
 .address-nav {
   display: flex;
-  flex-direction: column-reverse;
+}
+@media screen and (max-width: 767px) {
+  .address-nav {
+    flex-direction: column-reverse;
+    height: 25%;
+    justify-content: space-between;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .address-nav {
@@ -250,50 +238,7 @@ img {
   }
 }
 
-.telephone {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.18;
-  letter-spacing: 0.02em;
-  margin-bottom: 32px;
-}
-.telephone__link {
-  color: #2196f3;
-}
-@media screen and (min-width: 480px) and (max-width: 767px) {
-  .telephone {
-    font-size: 34px;
-  }
-}
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  .telephone {
-    margin-bottom: 10px;
-  }
-}
 @media screen and (min-width: 768px) {
-  .telephone {
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .email-address {
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 0.02em;
-    margin-bottom: 64px;
-  }
-  .email-address__link {
-    color: #757575;
-  }
-}
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  .email-address {
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width: 576px) {
   .address-nav__link {
     display: flex;
     align-items: center;
@@ -317,11 +262,45 @@ img {
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  .menu__item:not(:last-child) {
-    margin-right: 16px;
+.telephone {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+.telephone__link {
+  color: #2196f3;
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .telephone {
+    font-size: 34px;
   }
 }
+@media screen and (min-width: 768px) {
+  .telephone {
+    margin-bottom: 0;
+  }
+  .telephone__link {
+    color: #757575;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .email-address {
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+  }
+  .email-address__link {
+    color: #757575;
+  }
+}
+@media screen and (min-width: 768px) {
+  .email-address {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .menu__item:not(:last-child) {
     margin-right: 50px;
@@ -338,7 +317,7 @@ img {
 .menu__link:hover, .menu__link:focus {
   color: #2196f3;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
   .menu__link {
     display: inline-block;
     padding-top: 32px;
@@ -350,17 +329,16 @@ img {
 
 .social {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 25%;
+  max-width: 356px;
 }
 .social__item {
-  margin-left: 10px;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.02em;
-}
-.social__item:not(:last-child) {
-  margin-right: 10px;
 }
 .social__item:nth-child(1) {
   margin-left: 0;
@@ -373,11 +351,10 @@ img {
     flex-wrap: wrap;
   }
   .social__item:last-child {
-    margin-top: 10px;
     margin-left: 0;
   }
 }
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 767px) {
   .social {
     display: none;
   }
@@ -399,15 +376,12 @@ img {
   }
 }
 
-@media screen and (min-width: 480px) {
-  .current {
-    color: #2196f3;
-  }
+.current {
+  color: #2196f3;
 }
 @media screen and (min-width: 768px) {
   .current {
     position: relative;
-    color: #2196f3;
   }
   .current::after {
     position: absolute;

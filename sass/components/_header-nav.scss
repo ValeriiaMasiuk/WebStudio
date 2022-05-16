@@ -43,18 +43,9 @@
         left: 0;
         width: 100%;
         background-color: $secondary-color;
-        padding-left: 40px;
         z-index: 1;
-
-        @media screen and (max-width: 575px) {
-            height: 100vh;
-        }
-
-        @media screen and (min-width: 576px)  and (max-width: 767px) {
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-        }
+        height: 100vh;
+        padding-left: 25px;
     }
 
     @include tablet {
@@ -64,20 +55,13 @@
 }
 
 .menu {
-    @media screen and (max-width: 575px) {
-        margin-bottom: 302px;
-
-        &__item:not(:last-child) {
-            margin-bottom: 32px;
-        }
-    }
-
-    @media screen and (min-width: 576px) and (max-width: 767px) {
-        display: flex;
-    }
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-around;
     
     @include tablet {
-        display: flex;
+    flex-direction: row;
         margin-right: 84px;
     }
 
@@ -98,7 +82,13 @@
 
 .address-nav {
     display: flex;
-    flex-direction: column-reverse;
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column-reverse;
+        height: 25%;
+        justify-content: space-between;
+    }
+    
 
     @media screen and (min-width: 768px) and (max-width: 1199px) {
         flex-direction: column;
@@ -119,12 +109,40 @@
     }
 }
 
+.address-nav__link {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+
+        color: $text-color;
+
+        transition: color $transition-type;
+
+        &:hover,
+        &:focus {
+            color: $accent-color;
+            fill: $accent-color;
+        }
+    }
+
+    @include desktop {
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        font-size: 14px;
+        line-height: 1.14;
+    }
+}
+
 .telephone {
     font-weight: 500;
     font-size: 24px;
     line-height: 1.18;
     letter-spacing: 0.02em;
-    margin-bottom: 32px;
     
     &__link {
         color: $accent-color;
@@ -134,12 +152,12 @@
         font-size: 34px;
     }
 
-    @media screen and (min-width: 576px) and (max-width: 767px) {
-        margin-bottom: 10px;
-    }
-
     @include tablet {
         margin-bottom: 0;
+
+        &__link {
+            color: $text-color
+        }
     }
 }
 
@@ -148,53 +166,18 @@
         font-weight: 500;
         font-size: 24px;
         letter-spacing: 0.02em;
-        margin-bottom: 64px;
 
         &__link {        
             color: $text-color;
         }
     }
 
-    @media screen and (min-width: 576px) and (max-width: 767px) {
+    @include tablet {
         margin-bottom: 0;
     }
 }
 
-.address-nav__link {
-    @media screen and (min-width: 576px) {
-        display: flex;
-        align-items: center;
-        
-        font-weight: 500;
-        font-size: 12px;
-        letter-spacing: 0.02em;
-        
-        color: $text-color;
-
-        transition: color $transition-type;
-
-        &:hover, &:focus {
-            color: $accent-color;
-            fill: $accent-color;
-        }
-    }
-
-    @include desktop {
-            padding-top: 32px;
-            padding-bottom: 32px;
-
-            font-size: 14px;
-            line-height: 1.14;
-    }
-}
-
 .menu__item {
-    @media screen and (min-width: 576px) and (max-width: 767px) {
-        &:not(:last-child) {
-            margin-right: 16px;
-        }
-    }
-
     @include tablet {
         &:not(:last-child) {
             margin-right: 50px;
@@ -216,7 +199,7 @@
             color: $accent-color;
         }
 
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: 768px) {
         display: inline-block;
         padding-top: 32px;
         padding-bottom: 32px;
@@ -227,19 +210,16 @@
 
 .social{
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 25%;
+    max-width: 356px;
 
     &__item {
-        margin-left: 10px;
-
         font-weight: 500;
         font-size: 18px;
         line-height: 1.22;            
         letter-spacing: 0.02em;
-
-        &:not(:last-child) {
-            margin-right: 10px;
-        }
 
         &:nth-child(1) {
             margin-left: 0;
@@ -254,12 +234,11 @@
         flex-wrap: wrap;
 
         &__item:last-child {
-            margin-top: 10px;
             margin-left: 0;
         }
     }
 
-    @media screen and (min-width: 481px) {
+    @media screen and (min-width: 767px) {
         display: none;
     }
 }
